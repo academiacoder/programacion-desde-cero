@@ -1,4 +1,20 @@
-## Estructuras de control de flujo
+# Curso de Programación Desde Cero con JavaScript
+
+## Indice
+1. [Partes anteriores](#anterior)
+2. [Estructuras de control de flujo](#estructuras)
+
+---
+
+<div id=#anterior></div>
+
+## Partes anteriores
+
+Se añadiran las explicaciones anteriores al finalizar el curso!
+
+<div id=#estructuras></div>
+
+## 2. Estructuras de control de flujo
 
 Las estructuras de control de flujo nos permitiran justamente eso, controlar la forma en que fluye la información dentro de nuestro programa.
 
