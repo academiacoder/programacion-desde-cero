@@ -169,6 +169,8 @@ for(i in dias){
 
 ## 4. Funciones y Métodos de JavaScript
 
+[Link al archivo de la clase](https://github.com/academiacoder/programacion-desde-cero/blob/master/13_utilidades_string.js)
+
 Todos los lenguajes de programación tienen herramientas que nos permiten trabajar con los diferentes tipos de datos que podemos manejar en los lenguajes. Entre ellos tenemos funciones y métodos para manejar cadenas de texto (Strings) y Arrays, que son los que veremos en esta sección.
 
 <div id=#32></div>
