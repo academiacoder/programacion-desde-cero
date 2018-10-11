@@ -246,7 +246,7 @@ Sobre utilidades para números las veremos mejor cuando sea necesaria usar algun
 La mayoría de las veces cuando desarrollamos una aplicación y esta comienza a crecer, nos encontraremos con operaciones que debemos realizar más de una vez en nuestro código. Y aquí comenzamos a hablar de un principio de programación que llamaremos **DRY** (Don't Repeat Yourself) que significa no te repitas a ti mismo. Esto es porque cuando en el código realizamos este tipo de operaciones que se repiten lo que debemos hacer es escribirlas una sola vez en una función y utilizar esta función donde sea necesario.
 
 Les dejo un link a un documento que habla sobre los 3 principios de desarrollo DRY, KISS y SOLID (sería genial que lo leyeras!):
-[**Principios de diseño de software**](https://tantacom.com/principios-diseño-software-kiss-dry-solid)
+[**Principios de diseño de software**](https://tantacom.com/principios-diseno-software-kiss-dry-solid/)
 
 **Ejemplo**: Si tenemos que sumar 2 números, nosotros con los conocimientos que tenemos hasta ahora lo haríamos así.
 
