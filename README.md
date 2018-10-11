@@ -2,14 +2,21 @@
 
 ## Indice
 1. [Partes anteriores](#anterior)
-2. [Estructuras de control de flujo](#2)
+2. [Estructuras de control de flujo "Condicionales"](#2)
     1. [Bloques de código](#21)
+    2. [Estructura if](#22)
+        1. [Estructura if...else](#221)
+        2. [Estructura if...else if](#222)
+3. [Estructuras de control de flujo "Ciclos"](#3)
+    1. [Estructura for](#31)
+    2. [Estructura for in](#32)
+4. [Funciones y métodos propios de JavaScript (Strings y Arrays)](#4)
 
 ---
 
 <div id=#anterior></div>
 
-## Partes anteriores
+## 1. Partes anteriores
 
 Se añadiran las explicaciones anteriores al finalizar el curso!
 
@@ -25,7 +32,7 @@ Las estructuras condicionales, justamente nos permiten realizar un bloque de có
 
 <div id=#21></div>
 
-### Bloques de código
+### 2.1 Bloques de código
 
 Antes de entrar en las estructuras de control es importante que entiendan que es un bloque de código, y es simplemente un conjunto de sentencias agrupadas que deben ejecutarse en su totalidad, en JavaScript se definen los bloques de código entre llaves normales {}
 
@@ -42,7 +49,7 @@ Cabe aclarar que no suelen utilizarse de esta manera, normalmente utilizamos los
 
 <div id=#22></div>
 
-### Estructura Si... (if)
+### 2.2 Estructura Si... (if)
 
 Es la estructura más utilizada tanto en JavaScript como en otros lenguajes, y es la que empleamos para realizar una operación si se cumple una condición.
 
@@ -56,7 +63,7 @@ Esta estructura simplemente nos ayuda a ejecutar el contenido de ese bloque de c
 
 <div id=#221></div>
 
-#### Estructura Si...sino (if...else...)
+#### 2.2.1 Estructura Si...sino (if...else...)
 
 Esta estructura es igual al if, pero con una diferencia, podemos brindarle un segundo bloque de código el cual se ejecutará solo si la condición especificada en el if no se cumple.
 
@@ -70,7 +77,7 @@ if(condicion) {
 
 <div id=#222></div>
 
-#### Anidando if y else (else if)
+#### 2.2.2 Anidando if y else (else if)
 
 En un else podemos asignar un if extra al cual podemos indicarle otra condición, por lo cual el código del bloque.
 En este pundo debo aclarar que en algunos lenguajes hay una estructura específica para declarar un `else if`por ejemplo en python es `elif`.
@@ -96,7 +103,7 @@ Los ciclos dentro de las estructuras de control nos permiten repetir un bloque d
 
 <div id=#31></div>
 
-### Estructura Para... (for)
+### 3.1 Estructura Para... (for)
 
 La estructura for nos permite realizar repeticiones (ciclo o bucle) de una forma sencilla, aunque deben entender bien como se forma.
 
@@ -134,7 +141,7 @@ for(var i = 0; i < 7; i++){
 
 <div id=#32></div>
 
-#### Estructura Para, en... (for in)
+#### 3.2 Estructura Para, en... (for in)
 
 La forma anterior presentada para recorrer un array no es la recomendada, ya que contamos con una estructura específica para esto, con la que podemos recorrer arrays y objetos en JavaScript, también en la mayoría de los lenguajes existe una estructura como esta.
 
@@ -156,3 +163,39 @@ for(i in dias){
   document.write(dias[i] + "<br>");
 };
 ```
+
+
+<div id=#32></div>
+
+## 4. Funciones y Métodos de JavaScript
+
+Todos los lenguajes de programación tienen herramientas que nos permiten trabajar con los diferentes tipos de datos que podemos manejar en los lenguajes. Entre ellos tenemos funciones y métodos para manejar cadenas de texto (Strings) y Arrays, que son los que veremos en esta sección.
+
+<div id=#32></div>
+
+### 4.1 Utilidades para Cadenas de texto (Strings)
+
+**length** nos permite calcular la cantidad de caracteres que hay en una cadena, los espacios en blanco cuentan como 1 caracter.
+
+**+** el simbolo más ya lo hemos visto anteriormente y nos permite concatenar cadenas de texto, es decir unir una cadena con otra. Hay que recordar que hay que añadir los espacios en blanco al concatenar cadenas, sino quedarán las palabras unidas una con otra. Recuerden que podemos sumarle una variable númerica a un string y el resultado será un string que incluye el númerico como caracteres dentro de la cadena.
+
+**concat(cadena)** para hacer lo mismo podemos utilizar también la función concat() que tiene el mismo resultado que el operador +.
+
+**toUpperCase()** esto transformará toda la cadena en mayusculas.
+
+**toLowerCase()** alcontrario que la función anterior esto convertirá la cadena en minusculas.
+
+**charAt(valor)** nos devuelve el caracter que se encuentra en la posición indicada comenzando a contar desde 0.
+
+**indexOf(caracter)** nos devuelve la posición del primer caracter que coincide con el enviado en la cadena. Si el caracter no se encuentra en la cadena nos devuelve -1.
+
+**lastIndexOf(caracter)** nos devuelve la última posición en que se encuentra el caracter indicado. También devuelve -1 si no se encuentra.
+
+**substring(inicio, final)** extrae una parte de la cadena pueden pasarse 1 o 2 parámetros si se pasa solo uno, se excluye la cantidad de caracteres indicadas en el parámetro inicio de izquierda a derecha, y si se le pasan 2 parámetros el parámetro inicio funciona igual y el parámetro final indica en que caracter de la cadena debe terminar el corte. (se entiende mejor en un ejemplo)
+
+Si el parámetro final es mayor al parámetro inicio JavaScript lo invierte internamente ya que el final nunca puede ser inferiro al inicio.
+
+**split(separador)** convierte la cadena en un array utilizando el separador como indicador de donde debe cortar la cadena.
+
+Si utilizamos una cadena vacia como separador ("") nos separa caracter a caracter.
+
