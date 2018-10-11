@@ -237,3 +237,276 @@ Sobre utilidades para números las veremos mejor cuando sea necesaria usar algun
 **toFixed(decimales)** nos devuelve el número con la cantidad de decimales que indiquemos como parámetro, pero redondeandolo.
 
 **toPrecision(decimales)** nos devuelve el número con la cantidad de decimales indicada pero sin redondear.
+
+
+<div id=#5></div>
+
+### 5. Funciones
+
+La mayoría de las veces cuando desarrollamos una aplicación y esta comienza a crecer, nos encontraremos con operaciones que debemos realizar más de una vez en nuestro código. Y aquí comenzamos a hablar de un principio de programación que llamaremos **DRY** (Don't Repeat Yourself) que significa no te repitas a ti mismo. Esto es porque cuando en el código realizamos este tipo de operaciones que se repiten lo que debemos hacer es escribirlas una sola vez en una función y utilizar esta función donde sea necesario.
+
+Les dejo un link a un documento que habla sobre los 3 principios de desarrollo DRY, KISS y SOLID (sería genial que lo leyeras!):
+[**Principios de diseño de software**](https://tantacom.com/principios-diseño-software-kiss-dry-solid)
+
+**Ejemplo**: Si tenemos que sumar 2 números, nosotros con los conocimientos que tenemos hasta ahora lo haríamos así.
+
+```javascript
+var numero1 = 2;
+var numero2 = 8;
+
+var resultado = numero1 + numero2;
+```
+
+Muy bien pero además de esto queremos mostrar el resultado de esa operación. Así que le agregamos un document.write (aclaro que no utilizo alerts porque codepen.io me ha dado varios problemas con los alerts cuando los modifico trabando completamente Chrome y Safari)
+
+```javascript
+var numero1 = 2;
+var numero2 = 8;
+
+var resultado = numero1 + numero2;
+
+document.write(resultado)
+```
+
+Pero bien que pasa si dentro de nuestro programa nos encontramos con que esa operación de sumar y mostrar el resultado se repite una y otra y otra vez... terminaríamos viendo algo como esto.
+
+```javascript
+var numero1 = 2;
+var numero2 = 8;
+
+var resultado = numero1 + numero2;
+
+document.write('La suma es: ' + resultado)
+
+numero1 = 24;
+numero2 = 5;
+
+resultado = numero1 + numero2;
+
+document.write('La suma es: ' + resultado)
+
+numero1 = 1;
+numero2 = 6;
+
+resultado = numero1 + numero2;
+
+document.write('La suma es: ' + resultado)
+
+numero1 = 2;
+numero2 = 3;
+
+resultado = numero1 + numero2;
+
+document.write('La suma es: ' + resultado)
+```
+
+Y está perfecto, ese código funciona, pero no es lo que debemos hacer!
+
+
+<div id=#51></div>
+
+### 5.1 Estructura de una función
+
+Una función consta de 2 partes, una declaración de la función y un bloque de código, donde justamente este bloque de código es lo que ejecutaremos cada vez que llamemos a la función.
+
+```javascript
+// 1. Primero le indicamos a JavaScript que lo que vamos a declarar es una función utilizando la palabra reservada function
+// 2. Le indicamos el nombre de la función seguido de parentesis (en el contenido de los paréntesis nos centraremos en el próximo punto)
+// 3. Por último el bloque de código
+
+function nombreFuncion() {
+  // bloque de codigo
+}
+```
+
+Con esto tendríamos que nustra función para sumar y mostrar sería la siguiente.
+
+```javascript
+var resultado
+
+function sumaMuestra() {
+  resultado = numero1 + numero2;
+  document.write('La suma es: ' + resultado)
+}
+```
+
+Y ahora podemos hacer uso de nuestra función y llamarla en el código. Para llamar una función simplemente ponemos el nombre que le dimos a la función seguido de los paréntesis.
+
+```javascript
+var resultado;
+
+var numero1 = 2;
+var numero2 = 8;
+
+sumaMuestra();
+
+numero1 = 24;
+numero2 = 5;
+
+sumaMuestra();
+
+numero1 = 1;
+numero2 = 6;
+
+sumaMuestra();
+
+numero1 = 2;
+numero2 = 3;
+
+sumaMuestra();
+```
+
+Además de reducir las lineas de código utilizar funciones hace más eficiente a nuestros programas.
+
+<div id=#52></div>
+
+### 5.2 Parametros
+
+Las funciones pueden recibir datos, que utilizarán para realizar las operaciones. Estos datos que son los que deberemos declarar dentro de los paréntesis separados por comas, se llaman justamente parámetros o argumentos.
+
+Esto nos sirve para no limitar el uso de una función a nombres de variable definidos, sino que estos nombres pueden cambiar, como ven en nuestro ejemplo hasta ahora siempre trabajamos con las variables numero1 y numero2. Pero que pasaría si no se llamaran siempre numero1 y numero2 y nosotros queremos sumar numero1 y numero5 o numero1 y precioTotal. No funcionaría.
+
+Por tal motivo definimos parámetros y estos parámetros los utilizamos dentro de la función. Los parámetros deben enviarse en el orden que se declaran. Podemos enviar parámetros de cualquier tipo de dato, inclusive otras funciones, entonces si enviamos un número en un lugar de un booleano nos dará error el programa.
+
+Para seguir consistentemente con el ejemplo ahora tendríamos utilizando argumentos lo siguiente.
+
+En la declaración de la función (es decir cuando la creamos) debemos usar los mismos nombres que usamos para enviar los parámetros dentro de la función para hacer las operaciones. Pero cuadno llamemos a la función en el programa los parámetros no tienen que enviarse con esos nombres, pueden enviarse directamente datos, o variables con cualquier nombre.
+
+```javascript
+function sumaMuestra(primerNumero, segundoNumero) {
+  // Dentro de la función tenemos que declararla us
+  resultado = primerNumero + segundoNumero;
+  document.write('La suma es: ' + resultado)
+}
+```
+
+Y ahora podemos tener lo siguiente
+
+```javascript
+var resultado;
+
+var numero1 = 2;
+var numero2 = 8;
+
+sumaMuestra(numero1, numero2);
+
+var numero5 = 24;
+numero2 = 5;
+
+sumaMuestra(numero5, numero2);
+```
+
+<div id=#52></div>
+
+
+### 5.2 Ambito de las variables
+
+Ahora nos encontramos que tenemos el código dividido en funciones y esto nos trae un problema, estamos declarando variables fuera de funciones y dentro de funciones. Y no se comportan de la misma forma que cuando están todas fuera de funciones. Aquí entramos en el Ambito de las misma. Vamos a explicar todo esto con ejemplos para que se entienda mejor.
+
+```javascript
+function creaMensaje() {
+  var mensaje = "Mensaje de prueba";
+}
+creaMensaje();
+document.write(mensaje);
+```
+En esa función estamos declarando una variable dentro de una función, entonces al llamar a la función estamos creando esa variable llamada mensaje. Pero que pasa cuando la llamamos en el document.write no nos muestra nada!
+
+Cuando declaramos una variable dentro de una función esta no puede ser utilizada fuera de la misma. Para eso tenemos que devolver un valor de esa función, y para esto usamos la palabra reservada return.
+
+```javascript
+function creaMensaje() {
+  var mensaje = "Mensaje de prueba";
+  return mensaje
+}
+creaMensaje();
+document.write(mensaje);
+```
+Pero... que pasa acá tampoco estamos vendo nada en pantalla... Esto se debe a que return no devuelve la variable sino que lo que está haciendo es decir que cuando se ejecute la función esta tenga el valor mensaje. eso podemos verlo mejor en la consola de google. como vimos en laprimer clase del curso, en la página about:blank.
+
+entonces... como hacemos para imprimir ese mensaje, bien podemos hacer un document.write de la función en si misma o podemos asignar el valor de esa función a una variable
+
+```javascript
+function creaMensaje() {
+  var mensaje = "Mensaje de prueba";
+  return mensaje
+}
+var msj = creaMensaje();
+document.write(msj);
+
+// o podemos llamar la función dentro de document.write
+document.write(creaMensaje());
+```
+
+Y si lo que convendría hacer para este ejemplo sería en realidad hacer el document.write dentro de la función y no devolver ningún valor pero es solo para ejemplificar. Demostrado arriba deberíamos hacerlo así.
+
+```javascript
+function creaMensaje() {
+  var mensaje = "Mensaje de prueba";
+  document.write(mensaje);
+}
+
+creaMensaje();
+```
+
+Entonces como hacemos para acceder a una variable declarada dentro de una función..
+
+Hay que tener cuidado con esto ya uqe puede hacer que nuestro programa se vuelva bastante dificil de leer entonces entendamos el ambito de las variables.
+
+si declaramos una variable fuera de una función podemos llamarla dentro.
+
+```javascript
+var mensaje = "Mensaje de prueba";
+
+function creaMensaje() {
+  document.write(mensaje);
+}
+
+creaMensaje();
+```
+
+pero si declaramos una variable dentro de una función no podemos usarla fuera
+
+```javascript
+function creaMensaje() {
+  var mensaje = "Mensaje de prueba";
+}
+
+document.write(mensaje);
+```
+
+Si 2 variables son declaradas con el mismo nombre dentro y fuera de la función, las variables locales le "ganan" a las globales pero solo dentro de la función
+
+```javascript
+var mensaje = "Mensaje FUERA de función";
+
+function creaMensaje() {
+  var mensaje = "Mensaje DENTRO de función";
+  document.write(mensaje + "<br>");
+}
+
+// Imprime con la variable fuera de la función
+document.write(mensaje + "<br>");
+// Dentro de la función declaramos otra vez mensaje y se imprime
+creaMensaje()
+// Como el ambito de mensaje es interno a la función vuelve a imprimir la variable global
+document.write(mensaje + "<br>");
+```
+
+Para poder modificar un valor de una variable global dentro de una función y que este cambio prevalezca debemos utilizar la variable global ya declarada, es decir no utilizamos var, ya que esto vuelve a declarar, al no usar var simplemente estamos llamando a esa variable ya declarada.
+
+```javascript
+var mensaje = "Mensaje FUERA de función";
+
+function creaMensaje() {
+  mensaje = "Mensaje DENTRO de función";
+  document.write(mensaje + "<br>");
+}
+
+// Imprime con la variable fuera de la función
+document.write(mensaje + "<br>");
+// Dentro de la función usamos la variable ya declarada y la modificamos
+creaMensaje()
+// Y ahora como modificamos la variable imprime lo mismo que dentro de la función
+document.write(mensaje + "<br>");
+```

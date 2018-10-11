@@ -7,8 +7,6 @@ var resultado = [];
 document.write(dias + " -> Array Original <br>");
 document.write(resultado + " -> Resultado");
 
-document.write("<hr>");
-
 // Métodos para el manejo de números
 
 var numero = 2345.987602;
