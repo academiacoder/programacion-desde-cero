@@ -11,6 +11,9 @@
     1. [Estructura for](#31)
     2. [Estructura for in](#32)
 4. [Funciones y métodos propios de JavaScript (Strings y Arrays)](#4)
+    1. [Utilidades para Strings](#41)
+    2. [Utilidades para Arrays](#42)
+    3. [Utilidades para Números](#43)
 
 ---
 
@@ -165,7 +168,7 @@ for(i in dias){
 ```
 
 
-<div id=#32></div>
+<div id=#4></div>
 
 ## 4. Funciones y Métodos de JavaScript
 
@@ -173,7 +176,7 @@ for(i in dias){
 
 Todos los lenguajes de programación tienen herramientas que nos permiten trabajar con los diferentes tipos de datos que podemos manejar en los lenguajes. Entre ellos tenemos funciones y métodos para manejar cadenas de texto (Strings) y Arrays, que son los que veremos en esta sección.
 
-<div id=#32></div>
+<div id=#41></div>
 
 ### 4.1 Utilidades para Cadenas de texto (Strings)
 
@@ -201,3 +204,36 @@ Si el parámetro final es mayor al parámetro inicio JavaScript lo invierte inte
 
 Si utilizamos una cadena vacia como separador ("") nos separa caracter a caracter.
 
+<div id=#42></div>
+
+### 4.2 Utilidades para Arrays
+
+**length** nos devuelve el número de elementos que contiene el array.
+
+**concat()** esto nos permite concatenar arrays.
+
+**join(inserta)** nos permite unir todos los elementos de un array insertando el string que le enviamos cómo parámetro entre cada uno de los elementos.
+
+**pop()** elimina el último elemento del array. Esta función modifica el array original.
+
+**push(elemento)** nos sirve para enviar un elemento dentro de un array insertandolo en la última posición. Esta función modifica el array original.
+
+**shift()** elimina el primer elmento de un array. Esta función modifica el array original.
+
+**unshift(elemento)** nos permite añadir un elemento en la primer posición de un array. Esta función modifica el array original.
+
+**reverse()** este metodo modifica el array original colocando los elementos del mismo en el orden inverso.
+
+<div id=#43></div>
+
+### 4.3 Utilidades para Números
+
+Sobre utilidades para números las veremos mejor cuando sea necesaria usar alguna, así que veremos las más comunes.
+
+**NaN** JavaScript nos muestra este valor para indicarnos que el valor numérico que ha detectado no está definido en el lenguaje, por ejemplo cero dividido cero.
+
+**isNaN()** nos permite saber si un valor (también podemos comprobar el resultado de una operación) es NaN.
+
+**toFixed(decimales)** nos devuelve el número con la cantidad de decimales que indiquemos como parámetro, pero redondeandolo.
+
+**toPrecision(decimales)** nos devuelve el número con la cantidad de decimales indicada pero sin redondear.
