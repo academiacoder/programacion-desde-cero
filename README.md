@@ -1,29 +1,34 @@
 # Curso de Programación Desde Cero con JavaScript
 
 ## Indice
-1. [Partes anteriores](#anterior)
-2. [Estructuras de control de flujo "Condicionales"](#2)
-    1. [Bloques de código](#21)
-    2. [Estructura if](#22)
-        1. [Estructura if...else](#221)
-        2. [Estructura if...else if](#222)
-3. [Estructuras de control de flujo "Ciclos"](#3)
-    1. [Estructura for](#31)
-    2. [Estructura for in](#32)
-4. [Funciones y métodos propios de JavaScript (Strings y Arrays)](#4)
-    1. [Utilidades para Strings](#41)
-    2. [Utilidades para Arrays](#42)
-    3. [Utilidades para Números](#43)
+
+- [Curso de Programación Desde Cero con JavaScript](#curso-de-programación-desde-cero-con-javascript)
+  - [Indice](#indice)
+  - [1. Partes anteriores](#1-partes-anteriores)
+  - [2. Estructuras de control de flujo (Condicionales)](#2-estructuras-de-control-de-flujo-condicionales)
+    - [2.1 Bloques de código](#21-bloques-de-código)
+    - [2.2 Estructura Si... (if)](#22-estructura-si-if)
+      - [2.2.1 Estructura Si...sino (if...else...)](#221-estructura-sisino-ifelse)
+      - [2.2.2 Anidando if y else (else if)](#222-anidando-if-y-else-else-if)
+  - [3. Estructuras de control de flujo (Ciclos)](#3-estructuras-de-control-de-flujo-ciclos)
+    - [3.1 Estructura Para... (for)](#31-estructura-para-for)
+    - [3.2 Estructura Para, en... (for in)](#32-estructura-para-en-for-in)
+  - [4. Funciones y Métodos de JavaScript](#4-funciones-y-métodos-de-javascript)
+    - [4.1 Utilidades para Cadenas de texto (Strings)](#41-utilidades-para-cadenas-de-texto-strings)
+    - [4.2 Utilidades para Arrays](#42-utilidades-para-arrays)
+    - [4.3 Utilidades para Números](#43-utilidades-para-números)
+  - [5. Funciones](#5-funciones)
+    - [5.1 Estructura de una función](#51-estructura-de-una-función)
+    - [5.2 Parámetros](#52-parámetros)
+    - [5.3 Ámbito de las variables](#53-Ámbito-de-las-variables)
+  - [6. Sentencias Break y Continue](#6-sentencias-break-y-continue)
+    - [6.1 Sentencia Break](#61-sentencia-break)
 
 ---
-
-<div id=#anterior></div>
 
 ## 1. Partes anteriores
 
 Se añadiran las explicaciones anteriores al finalizar el curso!
-
-<div id=#2></div>
 
 ## 2. Estructuras de control de flujo (Condicionales)
 
@@ -32,8 +37,6 @@ Las estructuras de control de flujo nos permitiran justamente eso, controlar la 
 En todos los lenguajes de programación existen estas estructuras y la mayoría se comportan y componen de maneras muy similares.
 
 Las estructuras condicionales, justamente nos permiten realizar un bloque de código dependiendo de una o varias condiciones a cumplir.
-
-<div id=#21></div>
 
 ### 2.1 Bloques de código
 
@@ -50,8 +53,6 @@ Antes de entrar en las estructuras de control es importante que entiendan que es
 
 Cabe aclarar que no suelen utilizarse de esta manera, normalmente utilizamos los bloques de código con estructuras de control de flujo, funciones, etc... Los bloques de código como en el ejemplo anterior no tienen sentido.
 
-<div id=#22></div>
-
 ### 2.2 Estructura Si... (if)
 
 Es la estructura más utilizada tanto en JavaScript como en otros lenguajes, y es la que empleamos para realizar una operación si se cumple una condición.
@@ -64,8 +65,6 @@ if(condicion) {
 
 Esta estructura simplemente nos ayuda a ejecutar el contenido de ese bloque de código si se cumple la condición que está entre parentesis. Es decir que la condición debe retornar verdadero para que se ejecúte ese código.
 
-<div id=#221></div>
-
 #### 2.2.1 Estructura Si...sino (if...else...)
 
 Esta estructura es igual al if, pero con una diferencia, podemos brindarle un segundo bloque de código el cual se ejecutará solo si la condición especificada en el if no se cumple.
@@ -77,8 +76,6 @@ if(condicion) {
     // Ejecuta este bloque de código solo si la condición no es verdadera
 }
 ```
-
-<div id=#222></div>
 
 #### 2.2.2 Anidando if y else (else if)
 
@@ -97,14 +94,9 @@ if(condicion1) {
 
 **IMPORTANTE:** No es necesario que exista un `else`, el `else` solo será utilizado cuando queramos ejecutar un bloque de código por defecto en caso de que la condición requerida no se cumpla.
 
-
-<div id=#3></div>
-
 ## 3. Estructuras de control de flujo (Ciclos)
 
 Los ciclos dentro de las estructuras de control nos permiten repetir un bloque de código una X cantidad de veces dependiendo de una condición a cumplir.
-
-<div id=#31></div>
 
 ### 3.1 Estructura Para... (for)
 
@@ -142,9 +134,7 @@ for(var i = 0; i < 7; i++){
 };
 ```
 
-<div id=#32></div>
-
-#### 3.2 Estructura Para, en... (for in)
+### 3.2 Estructura Para, en... (for in)
 
 La forma anterior presentada para recorrer un array no es la recomendada, ya que contamos con una estructura específica para esto, con la que podemos recorrer arrays y objetos en JavaScript, también en la mayoría de los lenguajes existe una estructura como esta.
 
@@ -167,16 +157,11 @@ for(i in dias){
 };
 ```
 
-
-<div id=#4></div>
-
 ## 4. Funciones y Métodos de JavaScript
 
 [Link al archivo de la clase](https://github.com/academiacoder/programacion-desde-cero/blob/master/13_utilidades_string.js)
 
 Todos los lenguajes de programación tienen herramientas que nos permiten trabajar con los diferentes tipos de datos que podemos manejar en los lenguajes. Entre ellos tenemos funciones y métodos para manejar cadenas de texto (Strings) y Arrays, que son los que veremos en esta sección.
-
-<div id=#41></div>
 
 ### 4.1 Utilidades para Cadenas de texto (Strings)
 
@@ -204,8 +189,6 @@ Si el parámetro final es mayor al parámetro inicio JavaScript lo invierte inte
 
 Si utilizamos una cadena vacia como separador ("") nos separa caracter a caracter.
 
-<div id=#42></div>
-
 ### 4.2 Utilidades para Arrays
 
 **length** nos devuelve el número de elementos que contiene el array.
@@ -224,8 +207,6 @@ Si utilizamos una cadena vacia como separador ("") nos separa caracter a caracte
 
 **reverse()** este metodo modifica el array original colocando los elementos del mismo en el orden inverso.
 
-<div id=#43></div>
-
 ### 4.3 Utilidades para Números
 
 Sobre utilidades para números las veremos mejor cuando sea necesaria usar alguna, así que veremos las más comunes.
@@ -237,9 +218,6 @@ Sobre utilidades para números las veremos mejor cuando sea necesaria usar algun
 **toFixed(decimales)** nos devuelve el número con la cantidad de decimales que indiquemos como parámetro, pero redondeandolo.
 
 **toPrecision(decimales)** nos devuelve el número con la cantidad de decimales indicada pero sin redondear.
-
-
-<div id=#5></div>
 
 ## 5. Funciones
 
@@ -302,9 +280,6 @@ document.write('La suma es: ' + resultado)
 
 Y está perfecto, ese código funciona, pero no es lo que debemos hacer!
 
-
-<div id=#51></div>
-
 ### 5.1 Estructura de una función
 
 Una función consta de 2 partes, una declaración de la función y un bloque de código, donde justamente este bloque de código es lo que ejecutaremos cada vez que llamemos a la función.
@@ -358,9 +333,7 @@ sumaMuestra();
 
 Además de reducir las lineas de código utilizar funciones hace más eficiente a nuestros programas.
 
-<div id=#52></div>
-
-### 5.2 Parametros
+### 5.2 Parámetros
 
 Las funciones pueden recibir datos, que utilizarán para realizar las operaciones. Estos datos que son los que deberemos declarar dentro de los paréntesis separados por comas, se llaman justamente parámetros o argumentos.
 
@@ -396,10 +369,7 @@ numero2 = 5;
 sumaMuestra(numero5, numero2);
 ```
 
-<div id=#52></div>
-
-
-### 5.2 Ambito de las variables
+### 5.3 Ámbito de las variables
 
 Ahora nos encontramos que tenemos el código dividido en funciones y esto nos trae un problema, estamos declarando variables fuera de funciones y dentro de funciones. Y no se comportan de la misma forma que cuando están todas fuera de funciones. Aquí entramos en el Ambito de las misma. Vamos a explicar todo esto con ejemplos para que se entienda mejor.
 
@@ -410,6 +380,7 @@ function creaMensaje() {
 creaMensaje();
 document.write(mensaje);
 ```
+
 En esa función estamos declarando una variable dentro de una función, entonces al llamar a la función estamos creando esa variable llamada mensaje. Pero que pasa cuando la llamamos en el document.write no nos muestra nada!
 
 Cuando declaramos una variable dentro de una función esta no puede ser utilizada fuera de la misma. Para eso tenemos que devolver un valor de esa función, y para esto usamos la palabra reservada return.
@@ -422,6 +393,7 @@ function creaMensaje() {
 creaMensaje();
 document.write(mensaje);
 ```
+
 Pero... que pasa acá tampoco estamos vendo nada en pantalla... Esto se debe a que return no devuelve la variable sino que lo que está haciendo es decir que cuando se ejecute la función esta tenga el valor mensaje. eso podemos verlo mejor en la consola de google. como vimos en laprimer clase del curso, en la página about:blank.
 
 entonces... como hacemos para imprimir ese mensaje, bien podemos hacer un document.write de la función en si misma o podemos asignar el valor de esa función a una variable
@@ -509,4 +481,50 @@ document.write(mensaje + "<br>");
 creaMensaje()
 // Y ahora como modificamos la variable imprime lo mismo que dentro de la función
 document.write(mensaje + "<br>");
+```
+
+## 6. Sentencias Break y Continue
+
+La estructura de control For es sencilla, y nos permite controlar el número de repeticiones mediante las variables que definimos y el método de actualización de la misma que definimos como tercer parámetro al declarar la estructura.
+
+Pero además de esto disponemos en JavaScript de 2 sentencias que nos permiten manipular el comportamiento del bucle For, estas sentencias son justamente **Break** y **Continue**. 
+
+* **Break**: Nos permite detener el bucle
+* **Continue**: Nos permite saltarnos algunas repeticiones.
+
+Para explicar el funcionamiento de estas sentencias utilizaremos un ejemplo basado en recorrer un array caracter por caracter.
+
+>Tomaremos para ejemplo un fragmento del texto inicial de Star Wars episodio 5 versión latinoamericana
+
+```javascript
+var cadena = "Son tiempos de guerra civil. Naves rebeldes han atacado desde una base secreta...";
+```
+
+### 6.1 Sentencia Break
+
+La sentencia break como ya explicamos anteriormente nos permite cortar por completo la estrucutra for, y continuar con el resto del código.
+
+Por ejemplo supongamos que queremos cortar la estructura cuando encuentre un punto en la cadena.
+
+Para esto lo que haremos será detectar cuando encuentre el punto y en ese momento haremos uso de la sentencia break
+
+```javascript
+var cadena = "Son tiempos de guerra civil. Naves rebeldes han atacado desde una base secreta...";
+// Hacemos uso de la función split para cortar la cadena caracter por caracter
+var caracteres = cadena.split("");
+// Declaramos una variable como una cadena vacia para ir insertandole las letras que recorremos
+var resultado = "";
+
+for(i in caracteres) {
+  // Consultamos si se encontró un punto en como caracter
+  if(caracteres[i]) === ".") {
+    // Si se encontró un punto usamos break para cortar el funcionamiento
+    break;
+  } else {
+    resultado += letras[i];
+  }
+}
+
+document.write(resultado);
+
 ```
