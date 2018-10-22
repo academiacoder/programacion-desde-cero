@@ -630,9 +630,14 @@ Por ejemplo si queremos brindarle un mensaje a personas de X edad.
 ```javascript
 var edad = 17;
 
+// Declaramos la estructura con la palabra reservada Switch
+// como parámetro le enviamos la variable que comprobaremos en cada caso
 switch (edad) {
+  // Dentro del bloque de codigo utilizamos la palabra reservada case y le indicamos el valor que comprobaremos si exsite en la variable seguido de : (dos puntos)
   case 15:
+    // Escribimos el código a ejecutar si la variable contiene el contenido indicado
     document.write("Cumplir 15 años es una gran noticia, disfruta tu adolescencia");
+    // Declaramos la sentencia break; para que no ejecute ningún otro caso.
     break;
   
   case 18:
