@@ -24,6 +24,10 @@
   - [6. Sentencias Break y Continue](#6-sentencias-break-y-continue)
     - [6.1 Sentencia Break](#61-sentencia-break)
     - [6.2 Sentencia Continue](#62-sentencia-continue)
+  - [7. Otras estructuras de control](#7-otras-estructuras-de-control)
+    - [7.1 Estructura mientras (While)](#71-estructura-mientras-while)
+    - [7.2 Estructura haz...mientras (do...while)](#72-estructura-hazmientras-dowhile)
+    - [7.3 Estructura Switch](#73-estructura-switch)
 
 ---
 
@@ -518,11 +522,11 @@ var resultado = "";
 
 for(i in caracteres) {
   // Consultamos si se encontró un punto en como caracter
-  if(caracteres[i]) === ".") {
+  if(caracteres[i] === ".") {
     // Si se encontró un punto usamos break para cortar el funcionamiento
     break;
   } else {
-    resultado += letras[i];
+    resultado += caracteres[i];
   }
 }
 
@@ -530,7 +534,7 @@ document.write(resultado);
 
 ```
 
-> Como pueden ver al imprimir solo llega hasta "civil" y no imprime nada despues del punto justamente porque cortamos el funcionamiento de For al llegar al punto.
+> Como pueden ver al imprimir solo llega hasta "civil", y esto justamente se debe a que comenzó a guardar letra por letra en la variable resultado, pero le dijimos a for que cortara su funcionamiento al encontrar el caracter .
 
 ### 6.2 Sentencia Continue
 
@@ -547,11 +551,11 @@ var resultado = "";
 
 for(i in caracteres) {
   // Consultamos si se encontró un punto en como caracter
-  if(caracteres[i]) === "e") {
+  if(caracteres[i] === "e") {
     // Si se encontró una e usamos continue para evitar que ejecute el resto de la estructura for, pero que continue con la letra siguiente
     continue;
   } else {
-    resultado += letras[i];
+    resultado += caracteres[i];
   }
 }
 
@@ -560,3 +564,90 @@ document.write(resultado);
 ```
 
 > Ahora justamente tienen impreso todo el texto excepto las letras e
+
+## 7. Otras estructuras de control
+
+Además de las estructuras if, for y else, tenemos otras que son while, do while y switch que nos serán útiles para realizar algunas tareas complejas y otro tipo de repeticiones (ciclos).
+
+### 7.1 Estructura mientras (While)
+
+La estructura While nos permite realizar un ciclo basado en una condición, y este ciclo se repetirá indefinidamente mientras la condición se cumpla. por tanto hay que tener cuidado de manejar la condición dentro del bucle para que en algún momento el ciclo pare, sino será infinito.
+
+Por ejemplo si quisieramos sumar todos los números menores o iguales que otro número podemos usar While de esta manera
+
+```javascript
+// Declaramos la variable resultado con un valor inicial en 0
+var resultado = 0;
+
+// Declaramos el número mayor para utilizarlo como comparador y como finalizador del bucle
+var numero = 50;
+// Declaramos la variable que irá incrementando su valor y sumandose a resultado en cada repetición
+var i = 0;
+
+// Ahora hacemos uso del bucle while
+while(i <= numero) {
+  // a resultado le sumamos el valor actual de i
+  resultado += i
+  // incrementamos i en una unidad en cada repetición, luego de haber sumado el valor a resultado
+  i++
+}
+
+document.write(resultado)
+
+```
+
+> Debemos tener cuidado porque si no hubieramos realizado el incremento de i en el ciclo, este estaría ejecutandose indefinida cantidad de veces, lo cual nos crearia un loop infinito en nuestro programa.
+
+### 7.2 Estructura haz...mientras (do...while)
+
+Esta estructura es muy similar a While, pero con una gran diferencia en el concepto, la estructura do while ejecuta el código y luego comprueba la condición, es decir que el bloque de código por lo menos se ejecutará una vez sin importar la condición.
+
+Por ejemplo imprimiremos en pantalla los números almacenados en la variable i mientras i sea menor que o igual a 5. Para esto en una cadena de texto almacenaremos en cada repetición una cadena que contendrá un texto y el número que contenga la variable i
+
+```javascript
+// declaramos la variable texto como una cadena vacia
+var texto = "";
+
+var i = 0;
+
+// Declaramos la estructura do while, con la palabra reservada do seguida del bloque de código, al finalizar el bloque usamos la palabra reservada while para definir la condición
+do {
+ // Concatenamos la cadena siguiente en la variable texto
+ texto += "<br> El número es: " + i;
+ // incrementamos el valor de i
+ i++
+} while (i <=5);
+
+document.write(texto);
+```
+
+### 7.3 Estructura Switch
+
+La estrucutra de control if...else podemos utilizarla como hemos visto para realizar múltiples comprobaciones, pero cuando esas múltiples comprobaciones dependen de una misma variable, el código se vuelve redundante.
+
+Por ejemplo si queremos brindarle un mensaje a personas de X edad.
+
+```javascript
+var edad = 17;
+
+switch (edad) {
+  case 15:
+    document.write("Cumplir 15 años es una gran noticia, disfruta tu adolescencia");
+    break;
+  
+  case 18:
+    document.write("La mayoría de edad es algo importante, tienes que cuidarte");
+    break;
+
+  case 40:
+    document.write("Llegó la hora de hacerse estudios médicos que no te gustarán jajaja");
+    break;
+
+  default:
+    document.write("No tenemos mensajes personalizados para ti");
+}
+```
+
+> Cómo pueden observar solamente ejecuta el código dependiendo del valor de la variable.
+>
+> Si no utilizamos la sentencia **break** ejecutará el siguiente caso que encuentre en el código.
