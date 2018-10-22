@@ -23,6 +23,7 @@
     - [5.3 Ámbito de las variables](#53-Ámbito-de-las-variables)
   - [6. Sentencias Break y Continue](#6-sentencias-break-y-continue)
     - [6.1 Sentencia Break](#61-sentencia-break)
+    - [6.2 Sentencia Continue](#62-sentencia-continue)
 
 ---
 
@@ -487,10 +488,10 @@ document.write(mensaje + "<br>");
 
 La estructura de control For es sencilla, y nos permite controlar el número de repeticiones mediante las variables que definimos y el método de actualización de la misma que definimos como tercer parámetro al declarar la estructura.
 
-Pero además de esto disponemos en JavaScript de 2 sentencias que nos permiten manipular el comportamiento del bucle For, estas sentencias son justamente **Break** y **Continue**. 
+Pero además de esto disponemos en JavaScript de 2 sentencias que nos permiten manipular el comportamiento del bucle For, estas sentencias son justamente **Break** y **Continue**.
 
-* **Break**: Nos permite detener el bucle
-* **Continue**: Nos permite saltarnos algunas repeticiones.
+- **Break**: Nos permite detener el bucle
+- **Continue**: Nos permite saltarnos algunas repeticiones.
 
 Para explicar el funcionamiento de estas sentencias utilizaremos un ejemplo basado en recorrer un array caracter por caracter.
 
@@ -528,3 +529,34 @@ for(i in caracteres) {
 document.write(resultado);
 
 ```
+
+> Como pueden ver al imprimir solo llega hasta "civil" y no imprime nada despues del punto justamente porque cortamos el funcionamiento de For al llegar al punto.
+
+### 6.2 Sentencia Continue
+
+A diferencia de Break continue lo que hace es prevenir el funcionamiento prevenir el funcionamiento del bucle en determinados puntos.
+
+Por ejemplo supongamos que queremos eliminar todas las letras "e" del texto.
+
+```javascript
+var cadena = "Son tiempos de guerra civil. Naves rebeldes han atacado desde una base secreta...";
+// Hacemos uso de la función split para cortar la cadena caracter por caracter
+var caracteres = cadena.split("");
+// Declaramos una variable como una cadena vacia para ir insertandole las letras que recorremos
+var resultado = "";
+
+for(i in caracteres) {
+  // Consultamos si se encontró un punto en como caracter
+  if(caracteres[i]) === "e") {
+    // Si se encontró una e usamos continue para evitar que ejecute el resto de la estructura for, pero que continue con la letra siguiente
+    continue;
+  } else {
+    resultado += letras[i];
+  }
+}
+
+document.write(resultado);
+
+```
+
+> Ahora justamente tienen impreso todo el texto excepto las letras e
