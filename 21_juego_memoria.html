@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Juego de Memoria</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <style>
+        body{
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        div#tablero {
+            background: #0096D8;
+            border: #333 10px solid;
+            width: 800px;
+            height: 540px;
+            padding: 24px;
+            margin: 2em auto;
+        }
+
+        div#tablero>div {
+            background-color: #eee;
+            background-image: url(icon.png);
+            background-size: cover;
+            border: #000 1px solid;
+            width: 71px;
+            height: 71px;
+            float: left;
+            margin: 10px;
+            padding: 20px;
+            font-size: 60px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        
+    </script>
+</head>
+<body>
+    <div class="content">
+        <h1>JUEGO DE MEMORIA</h1>
+
+        <div id="tablero"></div>
+
+        <hr>
+
+        <div style="font-size: .9em; text-align: center;">
+            Agradecimientos a <a href="http://adamkhoury.com" target="_blank">Adam Khoury</a> por el juego!
+        </div> 
+    </div>
+</body>
+</html>
