@@ -2,25 +2,25 @@
 
 ## Indice
 
-- [Curso de Programación Desde Cero con JavaScript](#curso-de-programación-desde-cero-con-javascript)
+- [Curso de Programación Desde Cero con JavaScript](#curso-de-programaci%C3%B3n-desde-cero-con-javascript)
   - [Indice](#indice)
   - [1. Partes anteriores](#1-partes-anteriores)
   - [2. Estructuras de control de flujo (Condicionales)](#2-estructuras-de-control-de-flujo-condicionales)
-    - [2.1 Bloques de código](#21-bloques-de-código)
+    - [2.1 Bloques de código](#21-bloques-de-c%C3%B3digo)
     - [2.2 Estructura Si... (if)](#22-estructura-si-if)
       - [2.2.1 Estructura Si...sino (if...else...)](#221-estructura-sisino-ifelse)
       - [2.2.2 Anidando if y else (else if)](#222-anidando-if-y-else-else-if)
   - [3. Estructuras de control de flujo (Ciclos)](#3-estructuras-de-control-de-flujo-ciclos)
     - [3.1 Estructura Para... (for)](#31-estructura-para-for)
     - [3.2 Estructura Para, en... (for in)](#32-estructura-para-en-for-in)
-  - [4. Funciones y Métodos de JavaScript](#4-funciones-y-métodos-de-javascript)
+  - [4. Funciones y Métodos de JavaScript](#4-funciones-y-m%C3%A9todos-de-javascript)
     - [4.1 Utilidades para Cadenas de texto (Strings)](#41-utilidades-para-cadenas-de-texto-strings)
     - [4.2 Utilidades para Arrays](#42-utilidades-para-arrays)
-    - [4.3 Utilidades para Números](#43-utilidades-para-números)
+    - [4.3 Utilidades para Números](#43-utilidades-para-n%C3%BAmeros)
   - [5. Funciones](#5-funciones)
-    - [5.1 Estructura de una función](#51-estructura-de-una-función)
-    - [5.2 Parámetros](#52-parámetros)
-    - [5.3 Ámbito de las variables](#53-Ámbito-de-las-variables)
+    - [5.1 Estructura de una función](#51-estructura-de-una-funci%C3%B3n)
+    - [5.2 Parámetros](#52-par%C3%A1metros)
+    - [5.3 Ámbito de las variables](#53-%C3%A1mbito-de-las-variables)
   - [6. Sentencias Break y Continue](#6-sentencias-break-y-continue)
     - [6.1 Sentencia Break](#61-sentencia-break)
     - [6.2 Sentencia Continue](#62-sentencia-continue)
@@ -28,6 +28,11 @@
     - [7.1 Estructura mientras (While)](#71-estructura-mientras-while)
     - [7.2 Estructura haz...mientras (do...while)](#72-estructura-hazmientras-dowhile)
     - [7.3 Estructura Switch](#73-estructura-switch)
+  - [8. DOM](#8-dom)
+    - [8.1 Herramientas para modificar el DOM](#81-herramientas-para-modificar-el-dom)
+      - [8.1.1 document.getElementsByClassName](#811-documentgetelementsbyclassname)
+      - [8.1.2 document.getElementsByTagName](#812-documentgetelementsbytagname)
+      - [8.1.3 document.getElementById](#813-documentgetelementbyid)
 
 ---
 
@@ -656,3 +661,100 @@ switch (edad) {
 > Cómo pueden observar solamente ejecuta el código dependiendo del valor de la variable.
 >
 > Si no utilizamos la sentencia **break** ejecutará el siguiente caso que encuentre en el código.
+
+## 8. DOM
+
+DOM es Document object Model, Modelo de Objetos del Documento.
+
+Es un API que nos permite trabajar con documentos HTML y modificar su contenido, agregar, eliminar o cambiar justamente el conetenido del documento.
+
+- **Documento**: Es justamente la Página Web el Archivo HTML.
+- **Objeto**: Es todo elemento dentro del documento.
+- **Modelo**: Es la forma en que está compuesto un Documento HTML siguiendo el arbol de gerarquía de las etiquetas y teniendo en cuenta cual se encuentra dentro de otra.
+- **Nodos**: Un nodo es todo elemento que es modificable dentro del documento.
+
+JavaScript nos brinda una serie de herramientas que podemos utilizar para trabajar con el DOM y modificar su contenido.
+
+### 8.1 Herramientas para modificar el DOM
+
+Este no es un curso de JavaScript así que no veremos en profundidad esta serie de funciones que nos brinda JavaScript para modificar el DOM, solo veremos las necesarias para el proyecto final.
+
+Primero que nada aquí tienen el código que utilizaremos de ejemplo
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>20 Manipular el DOM</title>
+</head>
+<body>
+    <div class="container">
+        <h1 id="titulo">Manipular el DOM</h1>
+
+        <article class="articulo">
+            <h2>Título primer Artículo</h2>
+            <p class="texto-articulo">Texto primer artículo</p>
+        </article>
+
+        <hr>
+
+        <article class="articulo">
+            <h2>Título segundo Artículo</h2>
+            <p class="texto-articulo">Texto segundo artículo</p>
+        </article>
+
+        <hr>
+
+        <article class="articulo">
+            <h2>Título tercer Artículo</h2>
+            <p class="texto-articulo">Texto tercer artículo</p>
+        </article>
+    </div>
+
+    <script>
+    </script>
+</body>
+</html>
+```
+
+La primer herramienta que utilizaremos será seleccionar elementos por clase para hacer uso de estas herramientas debemos entender que estamos trabajando con el Documento, al igual que ya hemos visto a lo largo del curso cuando utilizamos **document.write**, justamente esa es una forma de manipular el DOM, entonces para hacer uso de estas herramientas debemos principalmente acceder al documento utilizando **document** seguido del método que queramos utilizar para manipular el documento.
+
+#### 8.1.1 document.getElementsByClassName
+
+Para seleccionar todos los nodos que contengan una clase específica utilizamos el siguiente código
+
+```javascript
+// Accedemos al documento, luego le decimos que método de seleccion queremos utilizar y dentro del parentesis enviamos el nombre de la clase como una cadena
+document.getElementsByClassName("nombre-clase");
+```
+
+Esto nos devolverá un array con todos los elementos (nodos) que contengan esa clase
+
+#### 8.1.2 document.getElementsByTagName
+
+Para seleccionar todos los nodos que contengan una etiqueta html específica utilizamos el siguiente código
+
+```javascript
+// Accedemos al documento, le decimos que queremos seleccionar por nombre de etiqueta y en el parentesis añadimos como una cadena la etiqueta que queremos seleccionar
+document.getElementsByTagName("etiqueta");
+```
+
+Esto nos devolverá un array con todos los elementos (nodos) que tengan esa etiqueta en el documento
+
+#### 8.1.3 document.getElementById
+
+Para seleccionar el elemento que contenga el id que nosotros necesitemos
+
+```javascript
+// Accedemos al documento, le decimos que queremos seleccionar por id y en el parentesis añadimos como una cadena el id a buscar
+document.getElementById("id");
+```
+
+Esto nos devolverá el elemento seleccionado, como podrán ver si hacen sus pruebas verán que no es un Array ya que los ID deben ser únicos entonces se pre supone que solo se recibirá un elemento.
+
+> Pueden utilizar el método **document.innerHTML** para hacer pruebas y cambiar el contenido de los nodos que seleccionen, este método insertará código HTML es decir que si por ejemplo añaden una etiqueta `<br>` la interpretará como un salto de linea.
+>
+> También pueden usar el método **document.innerText** lo que insertará texto plano, es decir si ingresan una etiqueta `<br>` con innerText les mostrará en pantalla el texto `<br>` y no lo interpretará como un salto de linea.
